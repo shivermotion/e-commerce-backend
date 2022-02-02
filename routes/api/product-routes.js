@@ -29,7 +29,7 @@ router.get("/:id", async (req, res) => {
 	// find a single product by its `id`
 	// be sure to include its associated Category and Tag data
 	try {
-		const productByID = await Product.findOne({
+		const productId = await Product.findOne({
 			where: {
 				id: req.params.id,
 			},
@@ -42,8 +42,8 @@ router.get("/:id", async (req, res) => {
 				},
 			],
 		});
-		if (productByID) {
-			res.json(productByID);
+		if (productId) {
+			res.json(productId);
 		} else {
 			res.status(404).json({
 				error: "No product with this ID",
@@ -107,7 +107,7 @@ router.delete("/:id", async (req, res) => {
 			res.json(deletedProduct);
 		} else {
 			res.status(404).json({
-				error: "No product with this ID",
+				error: "No product with this Id",
 			});
 		}
 	} catch (error) {

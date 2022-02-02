@@ -24,7 +24,7 @@ router.get("/:id", async (req, res) => {
 	// find a single tag by its `id`
 	// be sure to include its associated Product data
 	try {
-		const tagByID = await Tag.findOne({
+		const tagId = await Tag.findOne({
 			where: {
 				id: req.params.id,
 			},
@@ -34,8 +34,8 @@ router.get("/:id", async (req, res) => {
 				},
 			],
 		});
-		if (tagByID) {
-			res.json(tagByID);
+		if (tagId) {
+			res.json(tagId);
 		} else {
 			res.status(404).json({ error: "No tag with this Id" });
 		}

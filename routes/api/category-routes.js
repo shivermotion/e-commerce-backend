@@ -24,7 +24,7 @@ router.get("/:id", async (req, res) => {
 	// find one category by its `id` value
 	// be sure to include its associated Products
 	try {
-		const categoryByID = await Category.findOne({
+		const categoryId = await Category.findOne({
 			where: {
 				id: req.params.id,
 			},
@@ -34,8 +34,8 @@ router.get("/:id", async (req, res) => {
 				},
 			],
 		});
-		if (categoryByID) {
-			res.json(categoryByID);
+		if (categoryId) {
+			res.json(categoryId);
 		} else {
 			res.status(404).json({
 				error: "No category by with this ID",

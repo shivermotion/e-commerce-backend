@@ -14,17 +14,9 @@ shivermotion
 
 respresentation of an ecommerce backend. a working Express.js API to use Sequelize to interact with a MySQL database.
 
-## Installation :
-
-## Usage :
-
 ## Licenses :
 
 MIT
-
-## Contribution:
-
-## Test:
 
 ## Email:
 
